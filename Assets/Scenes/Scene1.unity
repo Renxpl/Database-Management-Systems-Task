@@ -980,7 +980,8 @@ MonoBehaviour:
   loginScreen: {fileID: 2023215198}
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
-  text: {fileID: 0}
+  text: {fileID: 1692559694}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &242061658
 MonoBehaviour:
@@ -1025,7 +1026,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 242061659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 242061657}
+        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+        m_MethodName: DecrementIncrement
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 242061657}
+        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+        m_MethodName: ItemSayisi
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &242061659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15947,7 +15972,8 @@ MonoBehaviour:
   loginScreen: {fileID: 2023215198}
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
-  text: {fileID: 0}
+  text: {fileID: 2079590102}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &538581274
 MonoBehaviour:
@@ -16000,7 +16026,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16511,6 +16537,7 @@ MonoBehaviour:
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &668428319
 MonoBehaviour:
@@ -16841,6 +16868,7 @@ MonoBehaviour:
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
   text: {fileID: 646578187}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &710039499
 MonoBehaviour:
@@ -17778,6 +17806,7 @@ MonoBehaviour:
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &935377054
 MonoBehaviour:
@@ -17975,7 +18004,8 @@ MonoBehaviour:
   loginScreen: {fileID: 2023215198}
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
-  text: {fileID: 0}
+  text: {fileID: 1692559694}
+  text2: {fileID: 2079590102}
   extra1: {fileID: 1758277525}
 --- !u!114 &976329514
 MonoBehaviour:
@@ -18359,6 +18389,7 @@ MonoBehaviour:
   registerScreen: {fileID: 0}
   mainScreen: {fileID: 0}
   text: {fileID: 646578187}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!1 &1115308132
 GameObject:
@@ -22280,7 +22311,8 @@ MonoBehaviour:
   loginScreen: {fileID: 2023215198}
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
-  text: {fileID: 0}
+  text: {fileID: 2079590102}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &1220522488
 MonoBehaviour:
@@ -22328,12 +22360,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1220522487}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
-        m_MethodName: ItemIncrement
+        m_MethodName: DecrementIncrement
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1220522487}
+        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+        m_MethodName: ItemSayisi
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22539,6 +22583,7 @@ MonoBehaviour:
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &1388066978
 MonoBehaviour:
@@ -23081,6 +23126,7 @@ MonoBehaviour:
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &1566598384
 MonoBehaviour:
@@ -23885,6 +23931,7 @@ MonoBehaviour:
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &1758277528
 MonoBehaviour:
@@ -24742,7 +24789,8 @@ MonoBehaviour:
   loginScreen: {fileID: 2023215198}
   registerScreen: {fileID: 1782457065}
   mainScreen: {fileID: 57483542}
-  text: {fileID: 0}
+  text: {fileID: 1692559694}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
 --- !u!114 &2021668995
 MonoBehaviour:
@@ -24795,7 +24843,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

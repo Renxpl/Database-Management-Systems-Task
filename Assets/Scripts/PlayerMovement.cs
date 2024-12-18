@@ -74,8 +74,9 @@ public class PlayerMovement : MonoBehaviour
 
         }
         Die();
-        mySql.InventoryControl();
-        mySql.IngameUpdate();
+        //mySql.InventoryControl();
+        mySql.IngameUpdate(1,1,1,1);
+        
 
 
     }

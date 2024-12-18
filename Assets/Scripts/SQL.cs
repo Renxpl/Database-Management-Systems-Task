@@ -180,11 +180,60 @@ public class SQL : MonoBehaviour
         //Debug.Log("Envanter Kontrolü");
     }
 
-    public void IngameUpdate()
+    public void IngameUpdate(int levelid ,int basehp,int xp, int gold)
     {
-        //IngameUpdate, deðiþkenleri alýr veritabanýný düzenler sonra deðiþkenleri sýfýrlar.
+        using (var cmd = new NpgsqlCommand("CALL sync_user_ingame_data(@uid, @iid,@bhp , @xp, @g, @dir)", conn))
+        {
+            cmd.Parameters.AddWithValue("uid", 8);
 
 
+            var l = new NpgsqlParameter("iid", NpgsqlTypes.NpgsqlDbType.Integer)
+            {
+                Direction = System.Data.ParameterDirection.InputOutput,
+                Value = levelid
+            };
+            var bhp = new NpgsqlParameter("bhp", NpgsqlTypes.NpgsqlDbType.Integer)
+            {
+                Direction = System.Data.ParameterDirection.InputOutput,
+                Value = basehp
+            };
+            var x = new NpgsqlParameter("xp", NpgsqlTypes.NpgsqlDbType.Integer)
+            {
+                Direction = System.Data.ParameterDirection.InputOutput,
+                Value = xp
+            };
+            var g = new NpgsqlParameter("g", NpgsqlTypes.NpgsqlDbType.Integer)
+            {
+                Direction = System.Data.ParameterDirection.InputOutput,
+                Value = gold
+            };
+            cmd.Parameters.Add(l);
+            cmd.Parameters.Add(bhp);
+            cmd.Parameters.Add(x);
+            cmd.Parameters.Add(g);
+
+            cmd.Parameters.AddWithValue("dir", "from_game");
+
+            cmd.ExecuteNonQuery();
+
+            
+            
+          
+        }
+
+
+
+    }
+
+    public void Leaderboard(int increase)
+    {
+        using (var cmd = new NpgsqlCommand("CALL increment_leaderboard_score(@uid, @inc)", conn))
+        {
+            cmd.Parameters.AddWithValue("uid", 8);
+            cmd.Parameters.AddWithValue("inc", increase);
+
+            cmd.ExecuteNonQuery();
+        }
 
     }
 
@@ -285,6 +334,9 @@ public class SQL : MonoBehaviour
         
 
     }
+
+
+
 
     // Update is called once per frame
     void Update()
