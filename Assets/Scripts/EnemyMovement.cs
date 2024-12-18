@@ -34,10 +34,10 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.localScale = new Vector2(-(Mathf.Sign(enemyRb.velocity.x)), 1f);
             moveSpeed = -moveSpeed;
-            Debug.Log("Touching");
+            //Debug.Log("Touching");
             
         }
-        Debug.Log("Trigger exit");
+        //Debug.Log("Trigger exit");
     }
 
 }

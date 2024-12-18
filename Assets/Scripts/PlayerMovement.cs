@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 10f;
     [SerializeField] float climbSpeed = 4f;
 
+    public int xp;
+
     float gravityScaleAtStart;
     Rigidbody2D myRigidbody;
 
@@ -25,7 +27,17 @@ public class PlayerMovement : MonoBehaviour
 
     BoxCollider2D myBoxCollider;
 
+    SQL mySql;
+
     bool isAlive = true;
+    bool rolling = false;
+    float rollingTime = 0.417f;
+    string rollingAnim = "Rolling";
+    
+
+
+
+    public bool isBulletObtained = false;
 
     void Start()
     {
@@ -34,16 +46,38 @@ public class PlayerMovement : MonoBehaviour
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         gravityScaleAtStart = myRigidbody.gravityScale;
         myBoxCollider = GetComponent<BoxCollider2D>();
+        mySql = FindObjectOfType<SQL>();
     }
 
     
     void Update()
     {
         if(!isAlive) return;
-        Run();
-        FlipSprite();
-        Climbladder();
+        if (!rolling)
+        {
+            Run();
+            FlipSprite();
+            Climbladder();
+        }
+        else
+        {
+            myRigidbody.velocity = new Vector2(15* transform.localScale.x, myRigidbody.velocity.y);
+            myAnimator.Play(rollingAnim);
+            rollingTime -= Time.deltaTime;
+            if (rollingTime <= 0)
+            {
+            
+                rolling = false;
+                rollingTime = 0.417f;
+                myAnimator.Play("Idling");
+            }
+
+        }
         Die();
+        mySql.InventoryControl();
+        mySql.IngameUpdate();
+
+
     }
 
     private void Die()
@@ -121,11 +155,23 @@ public class PlayerMovement : MonoBehaviour
     void OnFire(InputValue value)
     {
         if (!isAlive) return;
-        if (value.isPressed)
+        if (value.isPressed &&isBulletObtained &&!rolling)
         {
             Instantiate(bullet, gun.position, transform.rotation);
         }
     }
 
+
+    void OnRoll(InputValue value)
+    {
+        if (!isAlive) return;
+        if (value.isPressed && rollingTime == 0.417f)
+        {
+            rolling=true;
+
+
+        }
+
+    }
 
 }
