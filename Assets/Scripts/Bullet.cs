@@ -11,13 +11,14 @@ public class Bullet : MonoBehaviour
     PlayerMovement playerScript;
     SQL mySql;
     int counter = 1;
-
+    GameSession gameSession;
     private void Start()
     {
         bulletRb= GetComponent<Rigidbody2D>();
         xSpeed = player.transform.localScale.x * bulletSpeed;
         playerScript= player.GetComponent<PlayerMovement>();
         mySql= FindObjectOfType<SQL>();
+        gameSession= FindObjectOfType<GameSession>();
     }
 
     private void Update()
@@ -38,7 +39,8 @@ public class Bullet : MonoBehaviour
             
             if (counter == 1)
             {
-                playerScript.xp += 10;
+                gameSession.IncreaseXp();
+             
                 counter -= 1;
             }
 

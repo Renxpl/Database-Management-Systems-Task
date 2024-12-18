@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
@@ -14,9 +15,11 @@ public class ButtonHandler : MonoBehaviour
     public TextMeshProUGUI text;
     public TextMeshProUGUI text2;
     public GameObject extra1;
+    public GameObject extra2;
+    GameSession session;
 
     SQL mySql;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,7 @@ public class ButtonHandler : MonoBehaviour
         if (mainScreen != null) mainScreen.SetActive(true);
         if (loginScreen != null) loginScreen.SetActive(false);
         mySql = FindObjectOfType<SQL>();
+        session = FindObjectOfType<GameSession>();
 
     }
 
@@ -43,6 +47,7 @@ public class ButtonHandler : MonoBehaviour
         if (loginScreen != null) loginScreen.SetActive(true);
         if(extra1!=null && !mySql.AbilityControl()) extra1.SetActive(true);
         else if(mySql.AbilityControl()) extra1.SetActive(false);
+        else if(mySql.GunControl()) extra2.SetActive(false);
         if (text != null) { text.text = "XP Potion--Kalan Kullaným: " + mySql.ItemCount(1).ToString(); }
         if (text2 != null) { text2.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(2).ToString(); }
 
@@ -50,6 +55,11 @@ public class ButtonHandler : MonoBehaviour
     public void Login()
     {
         mySql.TestLogin(forUserName.text,forPassword.text);
+        if (mySql.giris)
+        {
+            SceneManager.LoadScene(0);
+            mySql.giris = false;
+        }
 
 
     }
@@ -57,6 +67,11 @@ public class ButtonHandler : MonoBehaviour
     {
         mySql.CreateAccount(forUserName.text, forPassword.text);
         mySql.FirstSetUp(forUserName.text);
+        if (mySql.giris)
+        {
+            SceneManager.LoadScene(0);
+            mySql.giris = false;
+        }
 
 
     }
@@ -93,8 +108,14 @@ public class ButtonHandler : MonoBehaviour
     public void YetenekAc()
     {
         //Debug.Log(mySql.AbilityControl());
-        mySql.NewAbility();
-        this.gameObject.SetActive(false);
+        if(session.GoldDon() >= 200)
+        {
+            mySql.NewAbility();
+            session.Purchase(200);
+
+            this.gameObject.SetActive(false);
+        }
+        
     }
 
 
@@ -107,18 +128,30 @@ public class ButtonHandler : MonoBehaviour
 
     public void ItemIncrement(int id)
     {
-        mySql.CollectibleIncrement(id);
+       
         if (text != null)
         {
-            if (id == 1)
+            if (id == 1 && session.GoldDon()>=50)
             {
+                mySql.CollectibleIncrement(id);
                 text.text = "XP Potion--Kalan Kullaným: " + mySql.ItemCount(id).ToString();
+                session.Purchase(50);
             }
-            else if (id == 2)
+            else if (id == 2 && session.GoldDon() >= 50)
             {
+                mySql.CollectibleIncrement(id);
                 text.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(id).ToString();
-
+                session.Purchase(50);
             }
+            
+        }
+
+        if (id == 3 && session.GoldDon() >= 400)
+        {
+            mySql.CollectibleIncrement(id);
+            session.Purchase(400);
+
+            this.gameObject.SetActive(false);
         }
 
     }

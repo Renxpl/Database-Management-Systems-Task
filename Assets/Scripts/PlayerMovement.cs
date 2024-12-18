@@ -33,11 +33,12 @@ public class PlayerMovement : MonoBehaviour
     bool rolling = false;
     float rollingTime = 0.417f;
     string rollingAnim = "Rolling";
-    
 
+   
 
 
     public bool isBulletObtained = false;
+    public bool isRollObtained = false;
 
     void Start()
     {
@@ -47,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         gravityScaleAtStart = myRigidbody.gravityScale;
         myBoxCollider = GetComponent<BoxCollider2D>();
         mySql = FindObjectOfType<SQL>();
+
+
     }
 
     
@@ -75,10 +78,19 @@ public class PlayerMovement : MonoBehaviour
         }
         Die();
         //mySql.InventoryControl();
-        mySql.IngameUpdate(1,1,1,1);
-        
-
-
+        //mySql.IngameUpdate(1,1,1,1);
+        /*
+        int l, b, x, g;
+        mySql.GameUpdate(out l, out b, out x,out g);
+        Debug.Log(l + " " + b + " " + x + " " + g);
+        */
+        /*
+        int hp, xx;
+        mySql.GetLevelAtt(out hp, out xx);
+        Debug.Log(hp + " " + xx);
+        */
+        isBulletObtained = mySql.GunControl();
+        isRollObtained = mySql.AbilityControl();
     }
 
     private void Die()
@@ -96,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isAlive) return;
         moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
+        //Debug.Log(moveInput);
 
     }
 
@@ -168,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isAlive) return;
         if (value.isPressed && rollingTime == 0.417f)
         {
-            rolling=true;
+           if(isRollObtained)  rolling=true;
 
 
         }

@@ -7,11 +7,12 @@ public class CoinScript : MonoBehaviour
 
     [SerializeField] AudioClip coinnn;
     [SerializeField] int pointsfor = 100;
+    SQL mySql;
 
     bool wasCollected = false;
     void Start()
     {
-        
+        mySql= new SQL();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class CoinScript : MonoBehaviour
             wasCollected= true;
             AudioSource.PlayClipAtPoint(coinnn, Camera.main.transform.position);
             FindObjectOfType<GameSession>().AddToScore(pointsfor);
+        
             Destroy(gameObject);
         }
     }
