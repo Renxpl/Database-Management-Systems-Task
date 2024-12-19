@@ -123,7 +123,8 @@ public class ButtonHandler : MonoBehaviour
 
     public void Quit()
     {
-       //çýkýþ
+        //çýkýþ
+        Application.Quit();
 
     }
 

@@ -80,15 +80,21 @@ public class GameSession : MonoBehaviour
 
         }
         mySql.IngameUpdate(level, playerLives, xpInt, scorePoint);
-        mySql.GetLevelAtt(level, out maxLife, out ceilxp);
-        if(ceilxp <= xpInt)
+        if(level < 3)
         {
-            xpInt= 0;
-            level += 1;
-            playerLives = maxLife;
             mySql.GetLevelAtt(level, out maxLife, out ceilxp);
+            if (ceilxp <= xpInt)
+            {
+                xpInt = 0;
+                level += 1;
+                playerLives = maxLife;
+                mySql.GetLevelAtt(level, out maxLife, out ceilxp);
+                lives.text = "lives: " + playerLives.ToString();
+                xp.text = "xp: " + xpInt.ToString();
 
+            }
         }
+       
         
 
     }
