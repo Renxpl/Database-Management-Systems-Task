@@ -47,6 +47,7 @@ public class ButtonHandler : MonoBehaviour
         if (loginScreen != null) loginScreen.SetActive(true);
         if(extra1!=null && !mySql.AbilityControl()) extra1.SetActive(true);
         else if(mySql.AbilityControl()) extra1.SetActive(false);
+        if (extra2 != null && !mySql.GunControl()) extra2.SetActive(true);
         else if(mySql.GunControl()) extra2.SetActive(false);
         if (text != null) { text.text = "XP Potion--Kalan Kullaným: " + mySql.ItemCount(1).ToString(); }
         if (text2 != null) { text2.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(2).ToString(); }
@@ -57,7 +58,7 @@ public class ButtonHandler : MonoBehaviour
         mySql.TestLogin(forUserName.text,forPassword.text);
         if (mySql.giris)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             mySql.giris = false;
         }
 
@@ -69,7 +70,7 @@ public class ButtonHandler : MonoBehaviour
         mySql.FirstSetUp(forUserName.text);
         if (mySql.giris)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             mySql.giris = false;
         }
 
@@ -136,6 +137,7 @@ public class ButtonHandler : MonoBehaviour
                 mySql.CollectibleIncrement(id);
                 text.text = "XP Potion--Kalan Kullaným: " + mySql.ItemCount(id).ToString();
                 session.Purchase(50);
+                
             }
             else if (id == 2 && session.GoldDon() >= 50)
             {
@@ -158,6 +160,16 @@ public class ButtonHandler : MonoBehaviour
 
     public void DecrementIncrement(int id)
     {
+        if (id == 1)
+        {
+            session.IncreaseXp();
+        }
+        if(id == 2)
+        {
+            session.IncreaseHp();
+        }
+
+
         if(id!= 3)
         mySql.CollectibleDecrement(id);
 

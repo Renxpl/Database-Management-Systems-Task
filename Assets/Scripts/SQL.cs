@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Npgsql;
 using System;
-using UnityEditor.MemoryProfiler;
 using System.Data;
 
 public class SQL : MonoBehaviour

@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c6e4894ee9e934ea0182b2aaacb933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  giris: 0
 --- !u!4 &98614521
 Transform:
   m_ObjectHideFlags: 0
@@ -508,7 +509,9 @@ MonoBehaviour:
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
+  extra2: {fileID: 0}
 --- !u!1 &212254250
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,13 +741,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae77dac6925e8c44b7641e9cad455c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forUserName: {fileID: 0}
+  forUserName: {fileID: 1466983841}
   forPassword: {fileID: 2103574320}
   loginScreen: {fileID: 833934717}
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
+  extra2: {fileID: 0}
 --- !u!114 &233751648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,7 +997,9 @@ MonoBehaviour:
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
+  extra2: {fileID: 0}
 --- !u!1 &327612879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1673,9 @@ MonoBehaviour:
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
+  extra2: {fileID: 0}
 --- !u!114 &684398895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2247,7 +2256,9 @@ MonoBehaviour:
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
+  extra2: {fileID: 0}
 --- !u!114 &726018650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,7 +2745,9 @@ MonoBehaviour:
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
+  extra2: {fileID: 0}
 --- !u!1 &846815483
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,7 +4166,9 @@ MonoBehaviour:
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
   text: {fileID: 0}
+  text2: {fileID: 0}
   extra1: {fileID: 0}
+  extra2: {fileID: 0}
 --- !u!1 &1718935028
 GameObject:
   m_ObjectHideFlags: 0

@@ -107,7 +107,7 @@ public class GameSession : MonoBehaviour
 
     private void ResetGameSession()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(01);
         mySql.IngameUpdate(1, 3, 0, 0);
         mySql.ResetLeaderboard();
         Destroy(gameObject);
@@ -138,6 +138,16 @@ public class GameSession : MonoBehaviour
     {
         xpInt += 10; 
         xp.text = "xp: " + xpInt.ToString();
+
+
+
+
+    }
+
+    public void IncreaseHp()
+    {
+        if(maxLife>playerLives) playerLives += 1;
+        lives.text = "lives: " + playerLives.ToString();
 
 
 
