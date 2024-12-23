@@ -148,7 +148,25 @@ public class SQL : MonoBehaviour
 
     }
 
-     
+    public void DeleteAccount(string username)
+    {
+
+        using (var cmd = new NpgsqlCommand("SELECT delete_user(@username)", conn))
+        {
+            
+            cmd.Parameters.AddWithValue("username", username);
+
+
+
+            // Saklý yordamý çalýþtýrýn
+            object result = cmd.ExecuteScalar();
+            
+        }
+
+
+
+
+    }
 
     public void CreateAccount(string username, string password)
     {
@@ -461,6 +479,11 @@ public class SQL : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnApplicationQuit()
+    {
+        conn.Close();
     }
 
 }

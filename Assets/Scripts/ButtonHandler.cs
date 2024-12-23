@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ public class ButtonHandler : MonoBehaviour
     public GameObject extra1;
     public GameObject extra2;
     GameSession session;
+    public GameObject deleteScreen;
 
     SQL mySql;
     
@@ -27,6 +29,7 @@ public class ButtonHandler : MonoBehaviour
         if (registerScreen != null) registerScreen.SetActive(false);
         if (mainScreen != null) mainScreen.SetActive(true);
         if (loginScreen != null) loginScreen.SetActive(false);
+        if (deleteScreen != null) deleteScreen.SetActive(false);
         mySql = FindObjectOfType<SQL>();
         session = FindObjectOfType<GameSession>();
 
@@ -38,12 +41,26 @@ public class ButtonHandler : MonoBehaviour
         
     }
 
+    public void ToDeleteScreen()
+    {
+        if (registerScreen != null) registerScreen.SetActive(false);
+        if (mainScreen != null) mainScreen.SetActive(false);
+        if (loginScreen != null) loginScreen.SetActive(false);
+        if (deleteScreen != null) deleteScreen.SetActive(true);
+        if (extra1 != null && !mySql.AbilityControl()) extra1.SetActive(true);
+        else if (mySql.AbilityControl()) extra1.SetActive(false);
+        if (extra2 != null && !mySql.GunControl()) extra2.SetActive(true);
+        else if (mySql.GunControl()) extra2.SetActive(false);
+        if (text != null) { text.text = "XP Potion--Kalan Kullaným: " + mySql.ItemCount(1).ToString(); }
+        if (text2 != null) { text2.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(2).ToString(); }
 
+    }
 
     public void ToLoginScreen()
     {
         if (registerScreen != null) registerScreen.SetActive(false);
         if (mainScreen != null) mainScreen.SetActive(false);
+        if (deleteScreen != null) deleteScreen.SetActive(false);
         if (loginScreen != null) loginScreen.SetActive(true);
         if(extra1!=null && !mySql.AbilityControl()) extra1.SetActive(true);
         else if(mySql.AbilityControl()) extra1.SetActive(false);
@@ -51,6 +68,15 @@ public class ButtonHandler : MonoBehaviour
         else if(mySql.GunControl()) extra2.SetActive(false);
         if (text != null) { text.text = "XP Potion--Kalan Kullaným: " + mySql.ItemCount(1).ToString(); }
         if (text2 != null) { text2.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(2).ToString(); }
+
+    }
+
+    public void DeleteAccount()
+    {
+
+
+        mySql.DeleteAccount(forUserName.text);
+
 
     }
     public void Login()
@@ -78,10 +104,11 @@ public class ButtonHandler : MonoBehaviour
     }
     public void ToRegisterScreen()
     {
-       if(registerScreen!= null) registerScreen.SetActive(true);
+        if(registerScreen!= null) registerScreen.SetActive(true);
+        if (deleteScreen != null) deleteScreen.SetActive(false);
         if (mainScreen != null) mainScreen.SetActive(false);
         if (loginScreen != null) loginScreen.SetActive(false);
-        if(text != null)
+        if (text != null)
         {
             Debug.Log(text.text);
             text.text = mySql.UpdateFriendList();
@@ -94,6 +121,7 @@ public class ButtonHandler : MonoBehaviour
         if (registerScreen != null) registerScreen.SetActive(false);
         if (mainScreen != null) mainScreen.SetActive(true);
         if (loginScreen != null) loginScreen.SetActive(false);
+        if (deleteScreen != null) deleteScreen.SetActive(false);
 
 
     }
