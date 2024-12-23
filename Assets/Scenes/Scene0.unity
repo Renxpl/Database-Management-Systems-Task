@@ -503,8 +503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae77dac6925e8c44b7641e9cad455c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forUserName: {fileID: 0}
-  forPassword: {fileID: 0}
+  forUserName: {fileID: 1466983841}
+  forPassword: {fileID: 2103574320}
   loginScreen: {fileID: 833934717}
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}
@@ -700,7 +700,6 @@ GameObject:
   - component: {fileID: 233751650}
   - component: {fileID: 233751649}
   - component: {fileID: 233751648}
-  - component: {fileID: 233751647}
   m_Layer: 5
   m_Name: Log in
   m_TagString: Untagged
@@ -729,27 +728,6 @@ RectTransform:
   m_AnchoredPosition: {x: 21.67981, y: -223.5398}
   m_SizeDelta: {x: 370.2863, y: 96.5192}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &233751647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233751645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae77dac6925e8c44b7641e9cad455c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forUserName: {fileID: 1466983841}
-  forPassword: {fileID: 2103574320}
-  loginScreen: {fileID: 833934717}
-  registerScreen: {fileID: 1014872622}
-  mainScreen: {fileID: 709460932}
-  text: {fileID: 0}
-  text2: {fileID: 0}
-  extra1: {fileID: 0}
-  extra2: {fileID: 0}
 --- !u!114 &233751648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,7 +772,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 233751647}
+      - m_Target: {fileID: 194413653}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
         m_MethodName: Login
         m_Mode: 1
@@ -856,7 +834,6 @@ GameObject:
   - component: {fileID: 275342308}
   - component: {fileID: 275342307}
   - component: {fileID: 275342306}
-  - component: {fileID: 275342309}
   m_Layer: 5
   m_Name: Registerng
   m_TagString: Untagged
@@ -929,7 +906,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275342309}
+      - m_Target: {fileID: 1654122836}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
         m_MethodName: Register
         m_Mode: 1
@@ -979,27 +956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275342304}
   m_CullTransparentMesh: 1
---- !u!114 &275342309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275342304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae77dac6925e8c44b7641e9cad455c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forUserName: {fileID: 1718935030}
-  forPassword: {fileID: 212254252}
-  loginScreen: {fileID: 833934717}
-  registerScreen: {fileID: 1014872622}
-  mainScreen: {fileID: 709460932}
-  text: {fileID: 0}
-  text2: {fileID: 0}
-  extra1: {fileID: 0}
-  extra2: {fileID: 0}
 --- !u!1 &327612879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,7 +1582,6 @@ GameObject:
   - component: {fileID: 684398897}
   - component: {fileID: 684398896}
   - component: {fileID: 684398895}
-  - component: {fileID: 684398894}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -1655,27 +1610,6 @@ RectTransform:
   m_AnchoredPosition: {x: 24, y: -358}
   m_SizeDelta: {x: 365.2981, y: 60.5763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &684398894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684398892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae77dac6925e8c44b7641e9cad455c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forUserName: {fileID: 0}
-  forPassword: {fileID: 0}
-  loginScreen: {fileID: 833934717}
-  registerScreen: {fileID: 1014872622}
-  mainScreen: {fileID: 709460932}
-  text: {fileID: 0}
-  text2: {fileID: 0}
-  extra1: {fileID: 0}
-  extra2: {fileID: 0}
 --- !u!114 &684398895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,7 +1654,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 684398894}
+      - m_Target: {fileID: 1654122836}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
         m_MethodName: ToMainScreen
         m_Mode: 1
@@ -2209,7 +2143,6 @@ GameObject:
   - component: {fileID: 726018652}
   - component: {fileID: 726018651}
   - component: {fileID: 726018650}
-  - component: {fileID: 726018649}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -2238,27 +2171,6 @@ RectTransform:
   m_AnchoredPosition: {x: 24, y: -358}
   m_SizeDelta: {x: 365.2981, y: 60.5763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &726018649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726018647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae77dac6925e8c44b7641e9cad455c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forUserName: {fileID: 0}
-  forPassword: {fileID: 0}
-  loginScreen: {fileID: 833934717}
-  registerScreen: {fileID: 1014872622}
-  mainScreen: {fileID: 709460932}
-  text: {fileID: 0}
-  text2: {fileID: 0}
-  extra1: {fileID: 0}
-  extra2: {fileID: 0}
 --- !u!114 &726018650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2303,7 +2215,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 726018649}
+      - m_Target: {fileID: 194413653}
         m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
         m_MethodName: ToMainScreen
         m_Mode: 1
@@ -4160,8 +4072,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae77dac6925e8c44b7641e9cad455c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forUserName: {fileID: 0}
-  forPassword: {fileID: 0}
+  forUserName: {fileID: 1718935030}
+  forPassword: {fileID: 212254252}
   loginScreen: {fileID: 833934717}
   registerScreen: {fileID: 1014872622}
   mainScreen: {fileID: 709460932}

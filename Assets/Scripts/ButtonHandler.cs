@@ -114,7 +114,7 @@ public class ButtonHandler : MonoBehaviour
             mySql.NewAbility();
             session.Purchase(200);
 
-            this.gameObject.SetActive(false);
+            extra1.SetActive(false);
         }
         
     }
@@ -143,7 +143,7 @@ public class ButtonHandler : MonoBehaviour
             else if (id == 2 && session.GoldDon() >= 50)
             {
                 mySql.CollectibleIncrement(id);
-                text.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(id).ToString();
+                text2.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(id).ToString();
                 session.Purchase(50);
             }
             
@@ -154,7 +154,7 @@ public class ButtonHandler : MonoBehaviour
             mySql.CollectibleIncrement(id);
             session.Purchase(400);
 
-            this.gameObject.SetActive(false);
+            extra2.SetActive(false);
         }
 
     }
@@ -186,7 +186,7 @@ public class ButtonHandler : MonoBehaviour
             }
             else if (id == 2)
             {
-                text.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(id).ToString();
+                text2.text = "HP Potion--Kalan Kullaným: " + mySql.ItemCount(id).ToString();
 
             }
         }
